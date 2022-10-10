@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# shellcheck disable=SC2155
+declare -r CURRENT_PATH=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
+declare -r PROJECT_PATH=${CURRENT_PATH}/..
+
+# Load env variables
+. "${PROJECT_PATH}"/.env
+
+# Stop the running Docker containers
+printf "We will stop your Curriculum Vitae [%s] environment\n" "${ENV}"
+
+docker-compose stop resume
+
+printf "See you soon!\n"

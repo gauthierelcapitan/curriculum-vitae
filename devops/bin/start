@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+# shellcheck disable=SC2155
+declare -r CURRENT_PATH=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
+declare -r PROJECT_PATH=${CURRENT_PATH}/..
+declare -r DOCKER_PATH=${PROJECT_PATH}/docker
+
+# Load env variables
+. "${PROJECT_PATH}"/.env
+
+# Check if ${ENV} is valid
+if [[ ! -d ${DOCKER_PATH}/${ENV} ]] ; then
+  printf "Unknown environment '%s'\n" "${ENV}"
+  printf "\nCheck if the following directories/files exists:\n"
+  printf "  * %s/%s;\n" "${DOCKER_PATH}" "${ENV}"
+  exit 1
+fi
+
+printf "We will start your Curriculum Vitae [%s] environment\n" "${ENV}"
+
+# Start Docker containers in the background and leaves them running
+docker-compose up -d resume
+
+i=0
+while [ $i -lt 5 ]
+do
+  printf "."
+  ((i+=1))
+  sleep 1
+done
+
+printf "\n\n"
+docker-compose ps

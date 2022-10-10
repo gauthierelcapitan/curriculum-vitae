@@ -1,0 +1,4 @@
+# Xelatex
+*.aux
+*.out
+*.log

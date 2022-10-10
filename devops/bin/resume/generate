@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+docker-compose exec resume xelatex curriculum-vitae-gauthier.tex > /dev/null 2>&1
+
+printf "The file curriculum-vitae-gauthier.pdf has been generated."

@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+
+  resume:
+    container_name: ${COMPOSE_PROJECT_NAME}_resume
+    build:
+      dockerfile: ./docker/${ENV}/resume/Dockerfile
+      context: .
+    working_dir: /app
+    networks:
+      - curriculum_vitae_network
+    volumes:
+      - ./../resume:/app:rw,delegated
+    command: tail -f /dev/null
+
+networks:
+  curriculum_vitae_network:
+    driver: bridge
