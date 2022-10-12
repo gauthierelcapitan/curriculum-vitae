@@ -101,7 +101,7 @@
 \usepackage{wrapfig}
 \usepackage{float}
 \usepackage{tikz}
-\usetikzlibrary{shapes, backgrounds,mindmap, trees}
+\usetikzlibrary{shapes, backgrounds, mindmap, trees}
 
 %----------------------------------------------------------------------------------------
 %   COLOR DEFINITION
@@ -109,10 +109,11 @@
 \usepackage{color}
 
 \definecolor{black}{HTML}{000000}
-\definecolor{purple}{HTML}{635Bff}
-\definecolor{indigo}{HTML}{0A2540}
-\definecolor{lightblue}{HTML}{00D4FF}
 \definecolor{gray}{HTML}{BEBEBE}
+\definecolor{secondary}{HTML}{635Bff}
+\definecolor{primary}{HTML}{0A2540}
+\definecolor{tertiary}{HTML}{00D4FF}
+
 
 %----------------------------------------------------------------------------------------
 %   HEADER
@@ -125,7 +126,7 @@
 \newcommand{\headicon}[2]
 {
     \small
-    \hspace{0.1cm}\color{purple}{#1}\hspace{0.1cm}
+    \hspace{0.1cm}\color{secondary}{#1}\hspace{0.1cm}
     \color{black}{#2}
 }
 
@@ -141,7 +142,7 @@
     }$\cdot$
         {\headicon
     {\faPaperPlane}
-    {\textcolor{lightblue}{\textbf{gauthier.cart@gmail.com}}}
+    {\textcolor{tertiary}{\textbf{gauthier.cart@gmail.com}}}
     }$\cdot$
         {\headicon
     {\faPhone}
@@ -157,15 +158,15 @@
 \newcommand{\cvsection}[2]
 {
     \vspace{8pt}
-    \colorbox{indigo}{\mystrut \makebox[1\linewidth][l]{
-        \large\color{lightblue}#1 \hspace{8pt} \textcolor{white}{\textbf{#2}}\hspace{4pt}
+    \colorbox{primary}{\mystrut \makebox[1\linewidth][l]{
+        \large\color{tertiary}#1 \hspace{8pt} \textcolor{white}{\textbf{#2}}\hspace{4pt}
     }}\\
 }
 
 \newcommand{\metasection}[2]
 {
     \begin{tabular*}{1\textwidth}{p{0.5cm} p{2.0cm} p{11cm}}
-        \textcolor{purple}{\faAngleDoubleRight}&\normalsize{\textcolor{purple}{#1:}}&#2\\[12pt]
+        \textcolor{secondary}{\faAngleDoubleRight}&\normalsize{\textcolor{secondary}{#1:}}&#2\\[12pt]
     \end{tabular*}
 }
 
@@ -177,15 +178,15 @@
 {
     \vspace{8pt}
     \begin{tabular*}{1\textwidth}{p{2.3cm}  p{4.8cm} x{9.9cm}}
-        \textcolor{black}{#1}& \textbf{#2} & \vspace{2.5pt}\textcolor{lightblue}{#3}
+        \textcolor{black}{#1}& \textbf{#2} & \vspace{2.5pt}\textcolor{tertiary}{#3}
 
     \end{tabular*}
     \vspace{-12pt}
-    \textcolor{gray}{\hrule}
+    \textcolor{gray}{\hrule height 0.5pt }
     \vspace{6pt}
     \begin{tabular*}{1\textwidth}{p{2.3cm} p{14.4cm}}
-        &\textcolor{purple}{\faAngleDoubleRight}\hspace{4pt}#4\\[3pt]
-        &\textcolor{purple}{\faAngleDoubleRight}\hspace{4pt}#5\\[6pt]
+        &\textcolor{secondary}{\faAngleDoubleRight}\hspace{4pt}#4\\[3pt]
+        &\textcolor{secondary}{\faAngleDoubleRight}\hspace{4pt}#5\\[6pt]
     \end{tabular*}
 
 }
@@ -204,7 +205,7 @@
 
 \newcommand{\cvlink}[2]
 {
-    \href{#1}{\textcolor{purple}{\hspace{-1pt}#2}}
+    \href{#1}{\textcolor{secondary}{\hspace{-1pt}#2}}
 }
 
 %----------------------------------------------------------------------------------------
@@ -224,11 +225,11 @@
 %----------------------------------------------------------------------------------------
     \vspace{-20.55pt}
 
-    \hspace{-0.25\linewidth}\colorbox{indigo}{
+    \hspace{-0.25\linewidth}\colorbox{primary}{
         \makebox[1.5\linewidth][c]{
             \HUGE{
                 \textcolor{white}{\textsc{Gauthier Cart}}
-                \textcolor{lightblue}{\rule[-1mm]{1mm}{0.9cm}}
+                \textcolor{tertiary}{\rule[-1mm]{1mm}{0.9cm}}
                 \HUGE{\textcolor{white}{\textsc{34 y/o}} }
             }
         }
@@ -256,8 +257,8 @@
     \vspace{-114pt}
 
     \metasection{Status}{Fullstack Web Engineer, DevOps Enjoyer}
-    \metasection{Fields}{Software Development, System Design, Sports business}
-    \metasection{Tech}{TypeScript, React, Node.js, Kotlin, Python, Docker, Git}
+    \metasection{Fields}{Software Development, System Design, Sport business}
+    \metasection{Tech}{TypeScript, Kotlin, Node.js, React, Docker, SQL, Git}
     \metasection{Loves}{Trail Running, Ski mountaineering, Chess, Software Craftsmanship}
 
     \vspace{6pt}
@@ -278,34 +279,34 @@
         {Fullstack Web Engineer}
         {UTMB Group, Chamonix \cvflag{FR}}
         {Design software architecture and leading development}
-        {Delivered \cvlink{https://utmb.world}{UTMB World} and \cvlink{https://live.utmb.world/utmb/runners/1}{UTMB Live} platforms (React, Next.JS, Nest.JS, Strapi, GraphQL, Meilisearch, Keycloak, MySQL, Redis, d3, Leaflet, Docker, Gatling)}
+        {Delivered \cvlink{https://utmb.world}{UTMB World} and \cvlink{https://live.utmb.world/utmb/runners/1}{UTMB Live} platforms (React, Next.JS, Nest.JS, Strapi, GraphQL, Meilisearch, Keycloak, OAuth 2.0, MySQL, Redis, d3, Leaflet, Docker, Gatling)}
 
     \cvevent
         {2018 - 2022}
         {Software Engineer}
         {LiveTrail, Chamonix \cvflag{FR}}
         {Enhance and maintain \cvlink{https://saintelyon.livetrail.net}{LiveTrail} legacy codebase}
-        {Reengineered software core (Java, Spring, Maven, React, Redux, Socket.IO) and extended with micro-services (Quarkus, Kotlin, Gradle)}
+        {Reengineered software core (Java, Spring Boot, Maven, React, Redux, Socket.IO) and extended it with microservices (Quarkus, Kotlin, Gradle)}
 
     \cvevent
         {2015 - 2018}
         {Software Engineer}
         {Atos, Grenoble \cvflag{FR}}
-        {Build a sync/async Events Bus for Pôle-Emploi with the SLDBUS Scrum team}
+        {Build a sync/async Events Bus for Pôle-Emploi within the SLDBUS Scrum team}
         {Deployed CI/CD and delivered major release (JavaEE, EJB/JMS, Jenkins, Cassandra DB, Oracle DB)}
 
     \cvevent
         {2013 - 2015}
         {Software Engineer}
         {Bull, Grenoble \cvflag{FR}}
-        {Extends software forge with the NovaForge R\&D Team}
+        {Extends software forge within the NovaForge R\&D Team}
         {Integrated GitLab, Jira and created dashboard widgets (J2EE, OSGi/iPOJO, Camel, Vaadin, Apache Karaf, JonAs, Maven)}
 
     \cvevent
         {2011 - 2012}
         {Technical Lead}
         {Sodifrance, Antananarivo \cvflag{MG}}
-        {Lead developers squad in an offshore web agency}
+        {Leads developers squad in an offshore Web agency}
         {Delivered institutional/e-commerce Drupal websites (PHP, HTML, JavaScript, MySQL)}
 
     %--------------------------------------------------------------------------------------
@@ -318,14 +319,14 @@
         {2010}
         {Intern}
         {E-nova Tech, New Delhi \cvflag{IN}}
-        {Manage project in an offshore web agency}
+        {Manage project in an offshore Web agency}
         {Delivered institutional Drupal websites}
 
     \cvevent
         {2005-2010}
         {Master Studies}
         {Université de technologie de Troyes \cvflag{FR}}
-        {Classes in computer science : algorithm, database and data-structure}
+        {Classes in computer science: algorithm, database and data-structure}
         {Professionalized in software development and system design}
 
     \cvevent
@@ -341,10 +342,9 @@
 
     \null
     \vspace*{\fill}
-    \hspace{-0.25\linewidth}\colorbox{indigo}{\makebox[1.5\linewidth][c]{\mystrut \small
+    \hspace{-0.25\linewidth}\colorbox{primary}{\makebox[1.5\linewidth][c]{\mystrut \small
         \textcolor{white}{www.gauthiercart.fr}
         $\cdot$
         \textcolor{white}{github.com/gauthierelcapitan}
-        $\cdot$
-        \textcolor{white}{https://stackoverflow.com/users/12702817}}}
+    }}
 \end{document}
